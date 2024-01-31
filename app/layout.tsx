@@ -16,7 +16,7 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
-const spaceGrotesk = Inter({
+const spaceGrotesk = Space_Grotesk({
   variable: "--font-spaceGrotesk",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
