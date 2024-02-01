@@ -5,7 +5,7 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { sidebarAuthLinks } from "@/constants/constants";
-import { GenericAuthLogo } from "./leftsidebar/utils/Utils";
+import { GenericAuthLogo } from "./Utils";
 
 const SignOutForMobile = () => {
   return (

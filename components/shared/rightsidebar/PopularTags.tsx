@@ -1,7 +1,7 @@
 import { popularTagsArray } from "@/constants/mockData";
 import { PopularTagType } from "@/types";
-import { Tags } from "lucide-react";
 import React from "react";
+import { GenericTag } from "../Utils";
 
 export const PopularTagListItem: React.FC<PopularTagType> = ({
   count,
@@ -9,9 +9,7 @@ export const PopularTagListItem: React.FC<PopularTagType> = ({
 }) => {
   return (
     <div className="flex w-full justify-between">
-      <div className="text-light400_light500 background-light800_dark300 subtle-medium  flex items-center justify-center rounded-md px-4 py-2 uppercase">
-        {tagName}
-      </div>
+      <GenericTag tagName={tagName} />
       <div className="text-dark500_light700 small-medium">{count}</div>
     </div>
   );

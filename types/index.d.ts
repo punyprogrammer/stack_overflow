@@ -57,3 +57,6 @@ export interface BadgeCounts {
 }
 
 export type BadgeCriteriaType = keyof typeof BADGE_CRITERIA;
+export interface GenericTagType {
+  tagName: string;
+}
