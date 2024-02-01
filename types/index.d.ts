@@ -5,6 +5,14 @@ export interface SidebarLink {
   route: string;
   label: string;
 }
+export interface QuestionListItemType {
+  text: string;
+  route: string;
+}
+export interface PopularTagType {
+  tagName: string;
+  count: number;
+}
 export interface SidebarAuthLinks {
   imgURL: string;
   route: string;
