@@ -5,7 +5,10 @@ export interface SidebarLink {
   route: string;
   label: string;
 }
-
+export interface SidebarAuthLinks {
+  imgURL: string;
+  route: string;
+}
 export interface Job {
   id?: string;
   employer_name?: string;
@@ -46,4 +49,3 @@ export interface BadgeCounts {
 }
 
 export type BadgeCriteriaType = keyof typeof BADGE_CRITERIA;
-

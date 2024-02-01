@@ -1,4 +1,4 @@
-import { SidebarLink } from "@/types";
+import { SidebarAuthLinks, SidebarLink } from "@/types";
 export const DARK = "dark";
 export const LIGHT = "light";
 export const SYSTEM = "system";
@@ -8,7 +8,16 @@ export const themes = [
   { value: "dark", label: "Dark", icon: "/assets/icons/moon.svg" },
   { value: "system", label: "System", icon: "/assets/icons/computer.svg" },
 ];
-
+export const sidebarAuthLinks: SidebarAuthLinks[] = [
+  {
+    imgURL: "/assets/icons/account.svg",
+    route: "/sign-in",
+  },
+  {
+    imgURL: "/assets/icons/sign-up.svg",
+    route: "/sign-up",
+  },
+];
 export const sidebarLinks: SidebarLink[] = [
   {
     imgURL: "/assets/icons/home.svg",
