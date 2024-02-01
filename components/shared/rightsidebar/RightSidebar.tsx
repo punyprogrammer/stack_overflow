@@ -6,9 +6,8 @@ const RightSidebar = () => {
   return (
     <div className="hidden lg:block">
       <div
-        className="background-light900_dark200 flex-start fixed    right-0 hidden h-full flex-col items-center justify-between overflow-y-scroll
-      px-[20px] pb-[32px] 
-      pt-[156px] lg:w-[350px]"
+        className="background-light900_dark200 light-border sticky left-0 top-0 flex h-screen flex-col justify-between overflow-y-auto px-12 pb-12 pt-36
+      lg:w-[355px]"
       >
         <Questions />
         <PopularTags />
