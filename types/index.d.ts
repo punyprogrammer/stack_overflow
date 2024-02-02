@@ -12,6 +12,7 @@ export interface QuestionListItemType {
 export interface PopularTagType {
   tagName: string;
   count: number;
+  customTagClass: string;
 }
 export interface SidebarAuthLinks {
   imgURL: string;
@@ -59,4 +60,24 @@ export interface BadgeCounts {
 export type BadgeCriteriaType = keyof typeof BADGE_CRITERIA;
 export interface GenericTagType {
   tagName: string;
+  customTagClass: string;
+}
+export interface PopularTagsType {
+  customTagClass: string;
+}
+export interface QuestionCardType {
+  questionid: string;
+  title: string;
+  tagList: string[];
+  author: string;
+  authorAvatar: string;
+  daysAgo: number;
+  votes: number;
+  answers: number;
+  views: number;
+}
+export interface GenericStatChiptype {
+  statLogo: string;
+  statCount: number;
+  statText: string;
 }

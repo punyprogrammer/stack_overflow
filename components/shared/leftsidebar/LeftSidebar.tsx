@@ -9,7 +9,7 @@ import SignedOutContainer from "../SignedOut";
 const LeftSidebar = () => {
   const pathname = usePathname();
   return (
-    <div className="background-light900_dark200 light-border sticky left-0 top-0 flex h-screen flex-col justify-between overflow-y-auto px-12 pb-12 pt-36">
+    <div className="hidden sm:flex background-light900_dark200 light-border sticky left-0 top-0  h-screen flex-col justify-between  px-12 pb-12 pt-36">
       <div className=" flex flex-col gap-3.5 ">
         {sidebarLinks?.map((item) => {
           const isActive =
