@@ -1,4 +1,5 @@
 import { BADGE_CRITERIA } from "@/constants";
+import { ComponentType } from "react";
 
 export interface SidebarLink {
   imgURL: string;
@@ -61,6 +62,7 @@ export type BadgeCriteriaType = keyof typeof BADGE_CRITERIA;
 export interface GenericTagType {
   tagName: string;
   customTagClass: string;
+  rightChildren?: any;
 }
 export interface PopularTagsType {
   customTagClass: string;

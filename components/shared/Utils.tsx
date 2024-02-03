@@ -19,12 +19,14 @@ export const GenericAuthLogo: React.FC<SidebarAuthLinks> = ({
 export const GenericTag: React.FC<GenericTagType> = ({
   tagName,
   customTagClass,
+  rightChildren,
 }) => {
   return (
     <div
-      className={`text-light400_light500 background-light800_dark300   flex items-center justify-center rounded-md px-4 py-2  ${customTagClass}`}
+      className={`inline-flex text-light400_light500 background-light800_dark300   items-center justify-center rounded-md px-4 py-2  ${customTagClass} relative`}
     >
       {tagName}
+      {rightChildren}
     </div>
   );
 };
