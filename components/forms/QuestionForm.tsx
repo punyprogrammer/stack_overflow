@@ -16,12 +16,14 @@ import {
 import { Input } from "@/components/ui/input";
 import { QuestionsSchema } from "@/lib/validations";
 import { z } from "zod";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { GenericTag } from "../shared/Utils";
 import Image from "next/image";
+import { createQuestion } from "@/lib/actions/question.actions";
 
 export function QuestionForm() {
+  const [submiting, setSubmiting] = useState(false);
   // For editor
   const editorRef = useRef(null);
   // 1. Define your form.
@@ -34,10 +36,15 @@ export function QuestionForm() {
     },
   });
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof QuestionsSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof QuestionsSchema>) {
+    try {
+      setSubmiting(true);
+      await createQuestion({});
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setSubmiting(false);
+    }
   }
   // on key down handler for form
   const handleInputKeyDown = (
@@ -153,6 +160,8 @@ export function QuestionForm() {
                       "removeformat | help",
                     content_style: "body { font-family:Inter; font-size:16px }",
                   }}
+                  onBlur={field.onBlur}
+                  onEditorChange={(content) => field.onChange(content)}
                 />
               </FormControl>
               <FormDescription className="body-regular mt-2.5 text-light-500">
@@ -209,7 +218,13 @@ export function QuestionForm() {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button
+          type="submit"
+          className="primary-gradient !text-light-900 w-fit"
+          disabled={submiting}
+        >
+          {submiting ? "Submiting" : "Submit"}
+        </Button>
       </form>
     </Form>
   );
